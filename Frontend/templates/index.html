@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+
+        <form action="https://your-vercel-app.vercel.app/predict" method="post">
+
+            <!-- Car Model (Name) -->
+            <label>Car Model:</label>
+            <!-- <select name="name" required> -->
+                <option value="">-- Select Model --</option>
+                <option value="Hyundai Santro Xing">Hyundai Santro Xing</option>
+                <option value="Mahindra Jeep CL550">Mahindra Jeep CL550</option>
+                <option value="Hyundai Grand i10">Hyundai Grand i10</option>
+                <option value="Ford EcoSport Titanium">Ford EcoSport Titanium</option>
+                <option value="Ford Figo">Ford Figo</option>
+                <option value="Hyundai Eon">Hyundai Eon</option>
+                <option value="Ford EcoSport Ambiente">Ford EcoSport Ambiente</option>
+                <option value="Maruti Suzuki Alto">Maruti Suzuki Alto</option>
+                <option value="Skoda Fabia Classic">Skoda Fabia Classic</option>
+                <option value="Maruti Suzuki Stingray">Maruti Suzuki Stingray</option>
+                <option value="Hyundai Elite i20">Hyundai Elite i20</option>
+                <option value="Mahindra Scorpio SLE">Mahindra Scorpio SLE</option>
+                <option value="Audi A8">Audi A8</option>
+                <option value="Audi Q7">Audi Q7</option>
+                <option value="Mahindra Scorpio S10">Mahindra Scorpio S10</option>
+                <option value="Hyundai i20 Sportz">Hyundai i20 Sportz</option>
+                <option value="Maruti Suzuki Vitara">Maruti Suzuki Vitara</option>
+                <option value="Mahindra Bolero DI">Mahindra Bolero DI</option>
+                <option value="Maruti Suzuki Swift">Maruti Suzuki Swift</option>
+                <option value="Maruti Suzuki Wagon">Maruti Suzuki Wagon</option>
+                <option value="Toyota Innova 2.0">Toyota Innova 2.0</option>
+                <option value="Renault Lodgy 85">Renault Lodgy 85</option>
+                <option value="Skoda Yeti Ambition">Skoda Yeti Ambition</option>
+                <option value="Maruti Suzuki Baleno">Maruti Suzuki Baleno</option>
+                <option value="Renault Duster 110">Renault Duster 110</option>
+                <option value="Renault Duster 85">Renault Duster 85</option>
+                <option value="Honda City 1.5">Honda City 1.5</option>
+                <option value="Maruti Suzuki Dzire">Maruti Suzuki Dzire</option>
+                <option value="Honda Amaze">Honda Amaze</option>
+                <option value="Honda Amaze 1.5">Honda Amaze 1.5</option>
+                <option value="Honda City">Honda City</option>
+                <option value="Datsun Redi GO">Datsun Redi GO</option>
+                <option value="Maruti Suzuki SX4">Maruti Suzuki SX4</option>
+                <option value="Mitsubishi Pajero Sport">Mitsubishi Pajero Sport</option>
+                <option value="Honda City ZX">Honda City ZX</option>
+                <option value="Tata Indigo eCS">Tata Indigo eCS</option>
+                <option value="Volkswagen Polo Highline">Volkswagen Polo Highline</option>
+                <option value="Chevrolet Spark LS">Chevrolet Spark LS</option>
+                <option value="Renault Duster 110PS">Renault Duster 110PS</option>
+                <option value="Mini Cooper S">Mini Cooper S</option>
+                <option value="Mahindra Scorpio S4">Mahindra Scorpio S4</option>
+                <option value="Mahindra Scorpio VLX">Mahindra Scorpio VLX</option>
+                <option value="Mahindra Quanto C8">Mahindra Quanto C8</option>
+                <option value="Ford EcoSport">Ford EcoSport</option>
+                <option value="Honda Brio">Honda Brio</option>
+                <option value="Volkswagen Vento Highline">Volkswagen Vento Highline</option>
+                <option value="Hyundai i20 Magna">Hyundai i20 Magna</option>
+                <option value="Toyota Corolla Altis">Toyota Corolla Altis</option>
+                <option value="Hyundai Verna Transform">Hyundai Verna Transform</option>
+                <option value="BMW 3 Series">BMW 3 Series</option>
+                <option value="BMW 7 Series">BMW 7 Series</option>
+                <option value="Mahindra XUV500 W8">Mahindra XUV500 W8</option>
+                <option value="Hyundai i10 Magna">Hyundai i10 Magna</option>
+                <option value="Hyundai Verna Fluidic">Hyundai Verna Fluidic</option>
+            </select><br>
+
+            <!-- Company -->
+            <label>Company:</label>
+            <!-- <select name="company" required> -->
+                <option value="">-- Select Company --</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Ford">Ford</option>
+                <option value="Maruti">Maruti</option>
+                <option value="Skoda">Skoda</option>
+                <option value="Audi">Audi</option>
+                <option value="Honda">Honda</option>
+                <option value="Datsun">Datsun</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Tata">Tata</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Renault">Renault</option>
+                <option value="Mini">Mini</option>
+                <option value="BMW">BMW</option>
+                <option value="Toyota">Toyota</option>
+            </select><br>
+
+            <!-- Year -->
+            <label>Year:</label>
+            <!-- <select name="year" required> -->
+                <option value="">-- Select Year --</option>
+                {% for y in range(2005, 2020) %}
+                <option value="{{ y }}">{{ y }}</option>
+                {% endfor %}
+            </select><br>
+
+            <!-- Kilometers Driven -->
+            <label>Kilometers Driven:</label>
+            <!-- <input type="number" name="kms_driven" required><br> -->
+
+            <!-- Fuel Type -->
+            <label>Fuel Type:</label>
+            <!-- <select name="fuel_type" required> -->
+                <option value="">-- Select Fuel Type --</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+            </select><br>
+
+            <!-- <input type="submit" value="Predict"> -->
+            <button type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction %}
+        <h2>Predicted Price: ₹{{ prediction }}</h2>
+        {% elif error %}
+        <h2 style="color:red;">Error: {{ error }}</h2>
+        {% endif %}
+    </div>
+</body>
+
+</html>
