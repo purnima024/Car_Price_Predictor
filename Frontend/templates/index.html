@@ -12,12 +12,12 @@
 <body>
     <div class="container">
         <h1>Car Price Prediction</h1>
-
-        <form action="https://your-vercel-app.vercel.app/predict" method="post">
+<!-- https://your-vercel-app.vercel.app/predict -->
+        <form action="/predict" method="post">
 
             <!-- Car Model (Name) -->
             <label>Car Model:</label>
-            <!-- <select name="name" required> -->
+            <select name="name" required>
                 <option value="">-- Select Model --</option>
                 <option value="Hyundai Santro Xing">Hyundai Santro Xing</option>
                 <option value="Mahindra Jeep CL550">Mahindra Jeep CL550</option>
@@ -77,7 +77,7 @@
 
             <!-- Company -->
             <label>Company:</label>
-            <!-- <select name="company" required> -->
+            <select name="company" required>
                 <option value="">-- Select Company --</option>
                 <option value="Hyundai">Hyundai</option>
                 <option value="Mahindra">Mahindra</option>
@@ -99,7 +99,7 @@
 
             <!-- Year -->
             <label>Year:</label>
-            <!-- <select name="year" required> -->
+            <select name="year" required>
                 <option value="">-- Select Year --</option>
                 {% for y in range(2005, 2020) %}
                 <option value="{{ y }}">{{ y }}</option>
@@ -108,11 +108,11 @@
 
             <!-- Kilometers Driven -->
             <label>Kilometers Driven:</label>
-            <!-- <input type="number" name="kms_driven" required><br> -->
+            <input type="number" name="kms_driven" required><br>
 
             <!-- Fuel Type -->
             <label>Fuel Type:</label>
-            <!-- <select name="fuel_type" required> -->
+            <select name="fuel_type" required>
                 <option value="">-- Select Fuel Type --</option>
                 <option value="Petrol">Petrol</option>
                 <option value="Diesel">Diesel</option>

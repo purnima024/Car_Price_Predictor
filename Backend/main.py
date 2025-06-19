@@ -7,6 +7,8 @@ import uvicorn
 import pickle
 import pandas as pd 
 
+app = FastAPI()
+
 # Enable CORS (for frontend-backend communication)
 app.add_middleware(
     CORSMiddleware,
@@ -21,13 +23,13 @@ with open("LinearRegressionModel.pkl", "rb") as f:
     model = pickle.load(f)
 
 
-app = FastAPI()
+
 
 # Mount static files like CSS
-app.mount("/static", StaticFiles(directory="Frontend/static"), name="static")
+app.mount("/static", StaticFiles(directory="../Frontend/static"), name="static")
 
 # HTML templates folder
-templates = Jinja2Templates(directory="Frontend/templates")
+templates = Jinja2Templates(directory="../Frontend/templates")
 
 
 # Home page
